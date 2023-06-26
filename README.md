@@ -1,3 +1,3 @@
-# MERN-Stack Infrastructure
+# iONexus
 
-Clone this repo to provide the starter code for a comprehensive MERN-Stack project including token-based authentication.
+Welcome to iONexus. A web application for inventory and order management.
