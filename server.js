@@ -18,8 +18,13 @@ app.use(express.static(path.join(__dirname, "build")));
 
 // Middleware to verify token and assign user object of payload to req.user
 app.use(require("./config/checkToken"));
+
 // Put API routes here, before the "catch all" route
 app.use("/api/users", require("./routes/api/users"));
+
+// iONexus Protected Routes
+const ensureLoggedIn = require("./config/ensureLoggedIn");
+app.use("/api/inventory", ensureLoggedIn, require("./routes/api/inventory"));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
