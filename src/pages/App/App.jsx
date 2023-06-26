@@ -9,6 +9,7 @@ import NewInventoryItemPage from "../NewInventoryItemPage/NewInventoryItemPage";
 import NavBar from "../../components/NavBar/NavBar";
 import NewCustomerPage from "../NewCustomerPage/NewCustomer";
 import CustomersPage from "../CustomersPage/CustomersPage";
+import Footer from "../../components/Footer/Footer";
 import { getUser } from "../../utilities/users-service";
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
             <Route path="/customers/new" element={<NewCustomerPage />} />
             <Route path="/customers" element={<CustomersPage />} />
           </Routes>
+          <Footer />
         </>
       ) : (
         <AuthPage setUser={setUser} />
