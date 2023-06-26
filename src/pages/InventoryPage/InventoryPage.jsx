@@ -17,7 +17,6 @@ export default function InventoryPage() {
 
   return (
     <div>
-      <h1>InventoryPage</h1>
       <InventoryList inventory={inventory} />
       <ExcelExport excelData={inventory} fileName={"Inventory"} />
     </div>

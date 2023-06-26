@@ -14,7 +14,6 @@ export default function ExcelExport({ excelData, fileName }) {
     // converts workbook into an excel file buffer
     const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
     // converts buffer into a Blob(Binary large object) object representing raw data.
-    //
     const data = new Blob([excelBuffer], { type: fileType });
     // Save file
     await FileSaver.saveAs(data, fileName + fileExtension);
