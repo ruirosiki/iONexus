@@ -9,3 +9,9 @@ export async function getAll() {
 export async function addNewItem(newItemData) {
   return sendRequest(BASE_URL, "POST", newItemData);
 }
+
+export async function getCategoryIdByName(categoryName) {
+  return sendRequest(`${BASE_URL}/category`, "POST", {
+    categoryName: categoryName,
+  });
+}

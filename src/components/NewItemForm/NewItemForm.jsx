@@ -21,7 +21,10 @@ export default function NewItemForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const newItem = { ...itemForm };
+    // convert category string to an ObjectId;
+    const category = await inventoryApi.getCategoryIdByName(itemForm.category);
+    const categoryId = category ? category._id : null;
+    const newItem = { ...itemForm, category: categoryId };
     await inventoryApi.addNewItem(newItem);
     // Reset form fields
     setItemForm({
