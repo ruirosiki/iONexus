@@ -3,13 +3,32 @@ import Item from "../InventoryItem/InventoryItem";
 import "./InventoryList.css";
 import { Link } from "react-router-dom";
 
-export default function InventoryList({ inventory }) {
-  const inventoryItems = inventory.map((item) => (
+export default function InventoryList({
+  inventory,
+  selectedCategory,
+  handleCategoryChange,
+}) {
+  const filteredInventory = selectedCategory
+    ? inventory.filter((item) => item.category === selectedCategory)
+    : inventory;
+
+  // const inventoryItems = inventory.map((item) => (
+  // <Item key={item._id} inventory={item} />
+  const inventoryItems = filteredInventory.map((item) => (
     <Item key={item._id} inventory={item} />
   ));
+
   return (
     <div>
-      <h1>Current Inventory</h1>
+      <select value={selectedCategory || ""} onChange={handleCategoryChange}>
+        <option value="">All</option>
+        <option value="649b607ff5fb7e53f5ffcde7">Mushrooms</option>
+        <option value="649b607ff5fb7e53f5ffcde8">Produce</option>
+        <option value="649b607ff5fb7e53f5ffcde9">Seafood</option>
+        <option value="649b607ff5fb7e53f5ffcdea">Meats</option>
+        <option value="649b607ff5fb7e53f5ffcdeb">Frozen</option>
+        <option value="649b607ff5fb7e53f5ffcdec">Dry Goods</option>
+      </select>
       <Link to="/inventory/new">
         <button>New Item</button>
       </Link>

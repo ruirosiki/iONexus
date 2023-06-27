@@ -1,7 +1,7 @@
 // import React from "react";
 // import InventoryPage from "../../pages/InventoryPage/InventoryPage";
 // import * as inventoryApi from "../../utilities/inventory-api";
-
+// import { useState, useEffect } from "react";
 // export default function GetInventory() {
 //   const [inventory, setInventory] = useState([]);
 //   useEffect(function () {
@@ -11,6 +11,5 @@
 //     }
 //     getInventory();
 //   }, []);
-//   console.log(inventory);
 //   return <InventoryPage inventory={inventory} />;
 // }

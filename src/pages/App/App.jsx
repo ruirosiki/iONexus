@@ -10,6 +10,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import NewCustomerPage from "../NewCustomerPage/NewCustomerPage";
 import CustomersPage from "../CustomersPage/CustomersPage";
 import Footer from "../../components/Footer/Footer";
+import GetInventory from "../../components/GetInventory/GetInventory";
 import { getUser } from "../../utilities/users-service";
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
           <Routes>
             <Route path="/orders" element={<CustomerOrdersPage />} />
             <Route path="/orders/new" element={<NewOrderPage />} />
+            {/* <Route path="/inventory" element={<GetInventory />} /> */}
             <Route path="/inventory" element={<InventoryPage />} />
             <Route path="/inventory/new" element={<NewInventoryItemPage />} />
             <Route
