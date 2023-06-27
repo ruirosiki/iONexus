@@ -8,8 +8,8 @@ export default function InventoryPage() {
   const [inventory, setInventory] = useState([]);
   useEffect(function () {
     async function getInventory() {
-      const inventory = await inventoryApi.getAll();
-      setInventory(inventory);
+      const inventoryData = await inventoryApi.getAll();
+      setInventory(inventoryData);
     }
     getInventory();
   }, []);
