@@ -9,7 +9,6 @@ export default function InventoryPage() {
   useEffect(function () {
     async function getInventory() {
       const inventory = await inventoryApi.getAll();
-      console.log(inventory);
       setInventory(inventory);
     }
     getInventory();

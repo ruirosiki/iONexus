@@ -14,13 +14,13 @@ export default function InventoryList({ inventory }) {
         <button>New Item</button>
       </Link>
       <table>
-        <tr>
+        <thead>
           <th>Product Name</th>
           <th>On Hand</th>
           <th>Unit</th>
           <th>Cost</th>
           <th>Price</th>
-        </tr>
+        </thead>
         <tbody>{inventoryItems}</tbody>
       </table>
     </div>

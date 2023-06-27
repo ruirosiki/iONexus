@@ -25,7 +25,7 @@ app.use("/api/users", require("./routes/api/users"));
 // iONexus Protected Routes
 const ensureLoggedIn = require("./config/ensureLoggedIn");
 app.use("/api/inventory", ensureLoggedIn, require("./routes/api/inventory"));
-
+app.use("/api/customers", ensureLoggedIn, require("./routes/api/customers"));
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
 app.get("/*", function (req, res) {

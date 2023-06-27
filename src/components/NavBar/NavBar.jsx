@@ -17,16 +17,32 @@ export default function NavBar({ user, setUser }) {
     <nav className="nav-bar">
       &nbsp;&nbsp;<span>Welcome, {user.name}</span>
       &nbsp;&nbsp;
-      <Link to="/inventory/new">New Item</Link>
-      <Link to="/customers/new">New Customer</Link>
-      <Link to="/orders/new">New Customer Order</Link>
-      <Link to="/inventory">View Inventory</Link>
-      <Link to="/customers">View Customers</Link>
-      <Link to="/orders">View Customer Orders</Link>
-      <Link to="/invoice">Invoice</Link>
-      <Link to="/reports">Reports</Link>
+      <Link to="/inventory/new">
+        <button>New Item</button>
+      </Link>
+      <Link to="/customers/new">
+        <button>New Customer</button>
+      </Link>
+      <Link to="/orders/new">
+        <button>New Customer Order</button>
+      </Link>
+      <Link to="/inventory">
+        <button>View Inventory</button>
+      </Link>
+      <Link to="/customers">
+        <button>View Customers</button>
+      </Link>
+      <Link to="/orders">
+        <button>View Customer Orders</button>
+      </Link>
+      <Link to="/invoice">
+        <button>Invoice</button>
+      </Link>
+      <Link to="/reports">
+        <button>Reports</button>
+      </Link>
       <Link to="" onClick={handleLogOut}>
-        Log Out
+        <button>Log Out</button>
       </Link>
     </nav>
   );

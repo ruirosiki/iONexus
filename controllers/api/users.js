@@ -16,7 +16,6 @@ async function create(req, res) {
     const user = await User.create(req.body);
     const token = createJWT(user);
     res.json(token);
-    console.log("this is the token in signup", token);
   } catch (err) {
     // client will check for non-2xx status code
     // 400 = bad request

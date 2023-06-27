@@ -7,7 +7,7 @@ import CustomerOrdersPage from "../CustomerOrdersPage/CustomerOrdersPage";
 import InventoryPage from "../InventoryPage/InventoryPage";
 import NewInventoryItemPage from "../NewInventoryItemPage/NewInventoryItemPage";
 import NavBar from "../../components/NavBar/NavBar";
-import NewCustomerPage from "../NewCustomerPage/NewCustomer";
+import NewCustomerPage from "../NewCustomerPage/NewCustomerPage";
 import CustomersPage from "../CustomersPage/CustomersPage";
 import Footer from "../../components/Footer/Footer";
 import { getUser } from "../../utilities/users-service";
@@ -29,6 +29,7 @@ export default function App() {
             <Route path="/customers/new" element={<NewCustomerPage />} />
             <Route path="/customers" element={<CustomersPage />} />
           </Routes>
+
           <Footer />
         </>
       ) : (

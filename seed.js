@@ -3,6 +3,7 @@ require("./config/database");
 
 const Category = require("./models/category");
 const Item = require("./models/item");
+const Customer = require("./models/customer");
 
 (async function () {
   await Category.deleteMany({});
@@ -19,7 +20,7 @@ const Item = require("./models/item");
     {
       name: "Chanterelles",
       category: categories[0],
-      qty: 0,
+      qty: 50,
       unit: "lb",
       cost: 9.5,
       price: 14.95,
@@ -27,7 +28,7 @@ const Item = require("./models/item");
     {
       name: "Morels",
       category: categories[0],
-      qty: 0,
+      qty: 100,
       unit: "lb",
       cost: 27.0,
       price: 39.95,
@@ -35,7 +36,7 @@ const Item = require("./models/item");
     {
       name: "Matsutake",
       category: categories[0],
-      qty: 0,
+      qty: 50,
       unit: "lb",
       cost: 35.0,
       price: 47.5,
@@ -43,7 +44,7 @@ const Item = require("./models/item");
     {
       name: "Black Trumpets",
       category: categories[0],
-      qty: 0,
+      qty: 30,
       unit: "lb",
       cost: 6.5,
       price: 12.75,
@@ -51,7 +52,7 @@ const Item = require("./models/item");
     {
       name: "Hedgehog",
       category: categories[0],
-      qty: 0,
+      qty: 30,
       unit: "lb",
       cost: 8.5,
       price: 13.95,
@@ -59,7 +60,7 @@ const Item = require("./models/item");
     {
       name: "Yellow Foot",
       category: categories[0],
-      qty: 0,
+      qty: 30,
       unit: "lb",
       cost: 6.5,
       price: 12.75,
@@ -67,7 +68,7 @@ const Item = require("./models/item");
     {
       name: "Lobster Mushrooms",
       category: categories[0],
-      qty: 0,
+      qty: 50,
       unit: "lb",
       cost: 11.5,
       price: 18.95,
@@ -75,7 +76,7 @@ const Item = require("./models/item");
     {
       name: "Chicken of the Woods",
       category: categories[0],
-      qty: 0,
+      qty: 40,
       unit: "lb",
       cost: 7.95,
       price: 13.5,
@@ -83,7 +84,7 @@ const Item = require("./models/item");
     {
       name: "Green Almonds",
       category: categories[1],
-      qty: 0,
+      qty: 75,
       unit: "lb",
       cost: 4.5,
       price: 8.75,
@@ -91,7 +92,7 @@ const Item = require("./models/item");
     {
       name: "Blood Oranges",
       category: categories[1],
-      qty: 0,
+      qty: 100,
       unit: "lb",
       cost: 2.5,
       price: 4.5,
@@ -99,7 +100,7 @@ const Item = require("./models/item");
     {
       name: "Dragon Fruit",
       category: categories[1],
-      qty: 0,
+      qty: 100,
       unit: "lb",
       cost: 3.75,
       price: 7.95,
@@ -107,7 +108,7 @@ const Item = require("./models/item");
     {
       name: "Buddha Hand Citrus",
       category: categories[1],
-      qty: 0,
+      qty: 30,
       unit: "lb",
       cost: 5.0,
       price: 8.95,
@@ -115,7 +116,7 @@ const Item = require("./models/item");
     {
       name: "Sunchokes",
       category: categories[1],
-      qty: 0,
+      qty: 100,
       unit: "lb",
       cost: 1.75,
       price: 6.5,
@@ -123,7 +124,7 @@ const Item = require("./models/item");
     {
       name: "White Aparagus",
       category: categories[1],
-      qty: 0,
+      qty: 60,
       unit: "lb",
       cost: 3.5,
       price: 8.5,
@@ -131,7 +132,7 @@ const Item = require("./models/item");
     {
       name: "Halibut",
       category: categories[2],
-      qty: 0,
+      qty: 340,
       unit: "lb",
       cost: 15.5,
       price: 25.5,
@@ -139,7 +140,7 @@ const Item = require("./models/item");
     {
       name: "Quinalt Salmon",
       category: categories[2],
-      qty: 0,
+      qty: 150,
       unit: "lb",
       cost: 11.95,
       price: 21.95,
@@ -147,7 +148,7 @@ const Item = require("./models/item");
     {
       name: "Black Cod",
       category: categories[2],
-      qty: 0,
+      qty: 100,
       unit: "lb",
       cost: 8.5,
       price: 16.5,
@@ -155,7 +156,7 @@ const Item = require("./models/item");
     {
       name: "Rabbit",
       category: categories[3],
-      qty: 0,
+      qty: 30,
       unit: "lb",
       cost: 5.5,
       price: 13.95,
@@ -163,7 +164,7 @@ const Item = require("./models/item");
     {
       name: "Venison",
       category: categories[3],
-      qty: 0,
+      qty: 50,
       unit: "lb",
       cost: 6.75,
       price: 12.5,
@@ -171,7 +172,7 @@ const Item = require("./models/item");
     {
       name: "Quail",
       category: categories[3],
-      qty: 0,
+      qty: 25,
       unit: "lb",
       cost: 4.0,
       price: 9.95,
@@ -179,7 +180,7 @@ const Item = require("./models/item");
     {
       name: "Frozen Huckleberry",
       category: categories[4],
-      qty: 0,
+      qty: 100,
       unit: "lb",
       cost: 5.0,
       price: 10.5,
@@ -187,7 +188,7 @@ const Item = require("./models/item");
     {
       name: "Frozen White Truffles",
       category: categories[4],
-      qty: 0,
+      qty: 454,
       unit: "gram",
       cost: 2.5,
       price: 4.75,
@@ -195,7 +196,7 @@ const Item = require("./models/item");
     {
       name: "Frozen Huatlicoche",
       category: categories[4],
-      qty: 0,
+      qty: 30,
       unit: "lb",
       cost: 28.95,
       price: 39.95,
@@ -203,7 +204,7 @@ const Item = require("./models/item");
     {
       name: "Verjus",
       category: categories[5],
-      qty: 0,
+      qty: 45,
       unit: "bottle",
       cost: 6.0,
       price: 12.0,
@@ -211,7 +212,7 @@ const Item = require("./models/item");
     {
       name: "Dried Heirloom Lemon",
       category: categories[5],
-      qty: 0,
+      qty: 1000,
       unit: "gram",
       cost: 1.0,
       price: 2.75,
@@ -219,7 +220,7 @@ const Item = require("./models/item");
     {
       name: "Gluten Free Flour",
       category: categories[5],
-      qty: 0,
+      qty: 60,
       unit: "lb",
       cost: 4.0,
       price: 8.75,
@@ -227,10 +228,34 @@ const Item = require("./models/item");
     {
       name: "Arborio Rice",
       category: categories[5],
-      qty: 0,
+      qty: 50,
       unit: "lb",
       cost: 7.5,
       price: 13.5,
+    },
+  ]);
+  await Customer.deleteMany({});
+  const customers = await Customer.create([
+    {
+      user: "649997fefba4a016758a5bbe",
+      name: "Per Se",
+      contactPerson: "John",
+      email: "john@perse.com",
+      phoneNumber: 2125551234,
+    },
+    {
+      user: "649997fefba4a016758a5bbe",
+      name: "Canlis",
+      contactPerson: "Jane",
+      email: "jane@canlis.com",
+      phoneNumber: 3605551234,
+    },
+    {
+      user: "649997fefba4a016758a5bbe",
+      name: "Senia",
+      contactPerson: "Koa",
+      email: "koa@senia.com",
+      phoneNumber: 8085551234,
     },
   ]);
   console.log(items);
