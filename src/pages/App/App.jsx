@@ -26,14 +26,20 @@ export default function App() {
             <Route path="/orders/new" element={<NewOrderPage />} />
             <Route path="/inventory" element={<InventoryPage />} />
             <Route path="/inventory/new" element={<NewInventoryItemPage />} />
-            <Route path="/customers/new" element={<NewCustomerPage />} />
+            <Route
+              path="/customers/new"
+              element={<NewCustomerPage user={user} />}
+            />
             <Route path="/customers" element={<CustomersPage />} />
           </Routes>
 
           <Footer />
         </>
       ) : (
-        <AuthPage setUser={setUser} />
+        <>
+          <AuthPage setUser={setUser} />
+          <Footer />
+        </>
       )}
     </main>
   );

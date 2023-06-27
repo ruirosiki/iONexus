@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-export default function NewCustomerForm() {
+import * as customersApi from "../../utilities/customers-api";
+export default function NewCustomerForm({ user }) {
   const [customerForm, setCustomerForm] = useState({
     name: "",
     contactPerson: "",
@@ -16,8 +16,21 @@ export default function NewCustomerForm() {
     });
   }
 
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const newCustomer = { ...customerForm, user: user._id };
+    await customersApi.addNewCustomer(newCustomer);
+    setCustomerForm({
+      name: "",
+      contactPerson: "",
+      email: "",
+      phoneNumber: "",
+    });
+    navigate("/customers");
+  }
+
   return (
-    <form className="formContainer">
+    <form className="formContainer" onSubmit={handleSubmit}>
       <label className="label">
         Name:
         <input
