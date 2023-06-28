@@ -22,6 +22,11 @@ async function getCategoryId(req, res) {
   res.json(categoryId);
 }
 
+async function getCategories(req, res) {
+  const categories = await Category.find({}).exec();
+  res.json(categories);
+}
+
 async function updateItem(req, res) {}
 module.exports = {
   index,
@@ -29,4 +34,5 @@ module.exports = {
   createItem,
   updateItem,
   getCategoryId,
+  getCategories,
 };

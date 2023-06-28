@@ -6,15 +6,15 @@ const Item = require("./models/item");
 const Customer = require("./models/customer");
 
 (async function () {
-  // await Category.deleteMany({});
-  // const categories = await Category.create([
-  //   { name: "Mushrooms", sortOrder: 10 },
-  //   { name: "Produce", sortOrder: 20 },
-  //   { name: "Seafood", sortOrder: 30 },
-  //   { name: "Meat", sortOrder: 40 },
-  //   { name: "Frozen", sortOrder: 50 },
-  //   { name: "Dry Goods", sortOrder: 60 },
-  // ]);
+  await Category.deleteMany({});
+  const categories = await Category.create([
+    { name: "Mushrooms", sortOrder: 10 },
+    { name: "Produce", sortOrder: 20 },
+    { name: "Seafood", sortOrder: 30 },
+    { name: "Meat", sortOrder: 40 },
+    { name: "Frozen", sortOrder: 50 },
+    { name: "Dry Goods", sortOrder: 60 },
+  ]);
   await Item.deleteMany({});
   const items = await Item.create([
     {
@@ -370,6 +370,6 @@ const Customer = require("./models/customer");
       phoneNumber: 3604451234,
     },
   ]);
-  console.log(items);
+  // console.log(items);
   process.exit();
 })();

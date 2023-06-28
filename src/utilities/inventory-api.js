@@ -15,3 +15,7 @@ export async function getCategoryIdByName(categoryName) {
     categoryName: categoryName,
   });
 }
+
+export async function getAllCategories() {
+  return sendRequest(`${BASE_URL}/category`);
+}

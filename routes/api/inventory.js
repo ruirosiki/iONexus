@@ -8,5 +8,6 @@ router.get("/", inventoryCtrl.index);
 router.post("/", inventoryCtrl.createItem);
 // POST - get the category id using category name
 router.post("/category", inventoryCtrl.getCategoryId);
-
+// GET - get all categories
+router.get("/category", inventoryCtrl.getCategories);
 module.exports = router;
