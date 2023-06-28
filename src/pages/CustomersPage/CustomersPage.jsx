@@ -15,7 +15,7 @@ export default function CustomersPage() {
 
   return (
     <div>
-      <CustomerList customers={customers} />
+      <CustomerList customers={customers} setCustomers={setCustomers} />
       <ExcelExport excelData={customers} fileName={"Customer List"} />
     </div>
   );

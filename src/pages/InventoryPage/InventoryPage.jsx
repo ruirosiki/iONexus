@@ -24,7 +24,15 @@ export default function InventoryPage() {
   return (
     <div>
       <h1>Current Inventory</h1>
-
+      <select value={selectedCategory || ""} onChange={handleCategoryChange}>
+        <option value="">All</option>
+        <option value="649b607ff5fb7e53f5ffcde7">Mushrooms</option>
+        <option value="649b607ff5fb7e53f5ffcde8">Produce</option>
+        <option value="649b607ff5fb7e53f5ffcde9">Seafood</option>
+        <option value="649b607ff5fb7e53f5ffcdea">Meats</option>
+        <option value="649b607ff5fb7e53f5ffcdeb">Frozen</option>
+        <option value="649b607ff5fb7e53f5ffcdec">Dry Goods</option>
+      </select>
       <InventoryList
         inventory={inventory}
         selectedCategory={selectedCategory}

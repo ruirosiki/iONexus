@@ -1,13 +1,19 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import * as customersApi from "../../utilities/customers-api";
-export default function EditCustomerForm({ customer, toggleEditMode }) {
-  const [editCustomerForm, setEditCustomerForm] = useState({
-    name: customer.name,
-    contactPerson: customer.contactPerson,
-    email: customer.email,
-    phoneNumber: customer.phoneNumber,
-  });
+export default function EditCustomerForm({
+  customer,
+  toggleEditMode,
+  handleUpdateCustomer,
+  setEditCustomerForm,
+  editCustomerForm,
+}) {
+  // const [editCustomerForm, setEditCustomerForm] = useState({
+  //   name: customer.name,
+  //   contactPerson: customer.contactPerson,
+  //   email: customer.email,
+  //   phoneNumber: customer.phoneNumber,
+  // });
 
   const navigate = useNavigate();
 
@@ -17,18 +23,18 @@ export default function EditCustomerForm({ customer, toggleEditMode }) {
     });
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const editedCustomer = {
-      _id: customer._id,
-      name: editCustomerForm.name,
-      contactPerson: editCustomerForm.contactPerson,
-      email: editCustomerForm.email,
-      phoneNumber: editCustomerForm.phoneNumber,
-    };
-    await customersApi.editCustomer(editedCustomer);
-    toggleEditMode();
-  }
+  // async function handleSubmit(e) {
+  //   e.preventDefault();
+  //   const editedCustomer = {
+  //     _id: customer._id,
+  //     name: editCustomerForm.name,
+  //     contactPerson: editCustomerForm.contactPerson,
+  //     email: editCustomerForm.email,
+  //     phoneNumber: editCustomerForm.phoneNumber,
+  //   };
+  //   await customersApi.editCustomer(editedCustomer);
+  //   toggleEditMode();
+  // }
 
   return (
     <form>
@@ -56,7 +62,7 @@ export default function EditCustomerForm({ customer, toggleEditMode }) {
         value={editCustomerForm.phoneNumber}
         onChange={(e) => updateForm({ phoneNumber: e.target.value })}
       />
-      <button type="submit" onClick={handleSubmit}>
+      <button type="submit" onClick={handleUpdateCustomer}>
         Save
       </button>
       <button type="submit" onClick={toggleEditMode}>
