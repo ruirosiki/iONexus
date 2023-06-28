@@ -315,7 +315,7 @@ const Customer = require("./models/customer");
     },
     {
       user: "649997fefba4a016758a5bbe",
-      name: "Morton's Steakhouse",
+      name: "Morton's",
       contactPerson: "Lehua",
       email: "lehua@mortons.com",
       phoneNumber: 8083331234,

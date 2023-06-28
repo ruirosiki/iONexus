@@ -18,8 +18,8 @@ export default function InventoryPage({
       setInventory(inventoryData);
     }
     getInventory();
+    console.log(inventory);
   }, []);
-
   return (
     <div>
       <h1>Current Inventory</h1>

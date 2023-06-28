@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import * as inventoryApi from "../../utilities/inventory-api";
 import CategorySearch from "../CategorySearch/CategorySearch";
 
-export default function NewItemForm({ categories }) {
+export default function NewItemForm({ categories, selectedCategory }) {
   const [itemForm, setItemForm] = useState({
     name: "",
     category: "",
@@ -42,11 +42,18 @@ export default function NewItemForm({ categories }) {
   return (
     <form className="formContainer" onSubmit={handleSubmit}>
       <label className="label">
-        Category:{" "}
-        <CategorySearch
-          categories={categories}
+        Category:
+        <select
+          value={itemForm.category}
           onChange={(e) => updateForm({ category: e.target.value })}
-        />
+        >
+          <option value="">Select a Category</option>
+          {categories.map((category) => (
+            <option key={category._id} value={category.name}>
+              {category.name}
+            </option>
+          ))}
+        </select>
         {/* <input
           type="text"
           className="input"

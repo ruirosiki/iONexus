@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import Item from "../InventoryItem/InventoryItem";
 import "./InventoryList.css";
 import { Link } from "react-router-dom";
@@ -10,20 +10,41 @@ export default function InventoryList({
   handleCategoryChange,
   categories,
 }) {
-  // const filteredInventory = useMemo(() => {
-  //   if (selectedCategory) {
-  //     return inventory.filter((item) => item.category === selectedCategory);
-  //   }
-  //   return inventory;
-  // }, [inventory, selectedCategory]);
+  const [filteredInventory, setFilteredInventory] = useState([]);
+  // //Option 1
+  //   useEffect(() => {
+  //     if (selectedCategory) {
+  //       setFilteredInventory(
+  //         inventory.filter((item) => item.category === selectedCategory)
+  //       );
+  //     } else {
+  //       setFilteredInventory(inventory);
+  //     }
+  //   }, [selectedCategory, inventory]);
 
-  const inventoryItems = inventory.map((item) => (
+  //   const inventoryItems = filteredInventory.map((item) => (
+  //     <Item key={item._id} inventory={item} />
+  //   ));
+
+  // const filteredInventory = selectedCategory
+  //   ? inventory.filter((item) => item.category === selectedCategory)
+  //   : inventory;
+
+  useEffect(() => {
+    setFilteredInventory(
+      selectedCategory
+        ? inventory.filter((item) => item.category === selectedCategory)
+        : inventory
+    );
+  }, [selectedCategory, inventory]);
+
+  const inventoryItems = filteredInventory.map((item) => (
     <Item key={item._id} inventory={item} />
   ));
 
-  // const filteredInventoryItems = filteredInventory.map((item) => (
-  //   <Item key={item._id} inventory={item} />
-  // ));
+  useEffect(() => {
+    setFilteredInventory(inventory);
+  }, []);
 
   return (
     <div>
@@ -42,10 +63,7 @@ export default function InventoryList({
           <th>Cost</th>
           <th>Price</th>
         </thead>
-        <tbody>
-          {inventoryItems}
-          {/* {selectedCategory ? filteredInventoryItems : inventoryItems} */}
-        </tbody>
+        <tbody>{inventoryItems}</tbody>
       </table>
     </div>
   );
