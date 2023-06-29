@@ -3,11 +3,11 @@
 import LineItemForm from "../LineItemForm/LineItemForm";
 import React from "react";
 
-export default function AddLineItem() {
+export default function AddLineItem({ inventory }) {
   return (
     <div>
       <h1>AddLineItem</h1>
-      <LineItemForm />
+      <LineItemForm inventory={inventory} />
     </div>
     //<AddButton />
   );

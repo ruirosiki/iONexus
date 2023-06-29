@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function CustomerSearch({ customers }) {
   console.log({ customers });
   return (
