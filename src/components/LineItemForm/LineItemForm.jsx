@@ -16,7 +16,8 @@ export default function LineItemForm({ inventory }) {
 
   function handleSelectedItem(item) {
     setSelectedItem(item);
-    setPrice(item.price);
+    setPrice(item.price.toFixed(2));
+    setQuantity(0);
   }
   function handlePriceChange(e) {
     setPrice(e.target.value);
@@ -37,17 +38,18 @@ export default function LineItemForm({ inventory }) {
 
   return (
     <div className="line-item-container">
-      <div className="add-line-item">
+      <div className="add-line-item  form-container">
         <label className="add-item-label">
-          Item Name:
+          Item Name:&nbsp;
           <ItemSearch
             inventory={inventory}
             selectedItem={selectedItem}
             onSelect={handleSelectedItem}
           />
         </label>
+        &nbsp;&nbsp;
         <label className="add-item-label">
-          Quantity:
+          Quantity:&nbsp;
           <input
             type="number"
             className="input"
@@ -56,8 +58,9 @@ export default function LineItemForm({ inventory }) {
             style={{ width: 75 }}
           />
         </label>
+        &nbsp;&nbsp;
         <label className="add-item-label">
-          Unit:
+          Unit:&nbsp;
           <input
             type="string"
             className="input"
@@ -66,16 +69,18 @@ export default function LineItemForm({ inventory }) {
             readOnly
           />
         </label>
+        &nbsp;&nbsp;
         <label className="add-item-label">
-          Cost:$
+          Cost: $
           <input
             type="number"
             className="input"
-            value={selectedItem.cost}
+            value={selectedItem?.cost?.toFixed(2) || ""}
             style={{ width: 75 }}
             readOnly
           />
         </label>
+        &nbsp;&nbsp;
         <label className="add-item-label">
           Price: $
           <input
@@ -86,6 +91,7 @@ export default function LineItemForm({ inventory }) {
             style={{ width: 75 }}
           />
         </label>
+        &nbsp;&nbsp;
         <button className="add-item-button" onClick={handleAddToOrder}>
           +
         </button>
