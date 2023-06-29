@@ -20,7 +20,7 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [customers, setCustomers] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [inventory, setInventory] = useState([]);
 
   // *********** FUNCTIONS **********
@@ -30,7 +30,6 @@ export default function App() {
       setInventory(inventoryData);
     }
     getInventory();
-    console.log(inventory);
   }, []);
 
   function handleCategoryChange(e) {
@@ -47,7 +46,6 @@ export default function App() {
     async function getCategories() {
       const categoriesData = await inventoryApi.getAllCategories();
       setCategories(categoriesData);
-      console.log(categories);
     }
     getCategories();
   }, []);

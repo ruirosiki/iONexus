@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Item from "../InventoryItem/InventoryItem";
 import "./InventoryList.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import CategorySearch from "../../components/CategorySearch/CategorySearch";
 import NewItemButton from "../NewItemButton/NewItemButton";
 export default function InventoryList({
@@ -10,26 +10,7 @@ export default function InventoryList({
   handleCategoryChange,
   categories,
 }) {
-  // const [filteredInventory, setFilteredInventory] = useState([]);
-
-  // useEffect(() => {
-  //   setFilteredInventory(
-  //     selectedCategory
-  //       ? inventory.filter((item) => item.category === selectedCategory)
-  //       : inventory
-  //   );
-  // }, [selectedCategory, inventory]);
-
-  // const inventoryItems = filteredInventory.map((item) => (
-  //   <Item key={item._id} inventory={item} />
-  // ));
-
-  // useEffect(() => {
-  //   setFilteredInventory(inventory);
-  // }, []);
-
   let filteredInventory = inventory;
-
   if (selectedCategory) {
     filteredInventory = inventory.filter(
       (item) => item.category === selectedCategory

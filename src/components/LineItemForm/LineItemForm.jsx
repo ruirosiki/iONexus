@@ -6,10 +6,11 @@ import ItemSearch from "../ItemSearch/ItemSearch";
 
 export default function LineItemForm({ inventory }) {
   const [selectedItem, setSelectedItem] = useState("");
-  const [price, setPrice] = useState(selectedItem.price);
+  const [price, setPrice] = useState("");
 
   function handleSelectedItem(item) {
     setSelectedItem(item);
+    setPrice(item.price);
   }
   function handlePriceChange(e) {
     setPrice(e.target.value);

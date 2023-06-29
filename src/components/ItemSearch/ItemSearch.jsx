@@ -4,8 +4,6 @@ export default function ItemSearch({ inventory, selectedItem, onSelect }) {
     const selectedItem = inventory.find((item) => item.name === selectedValue);
     onSelect(selectedItem);
   }
-
-  console.log({ inventory });
   return (
     <select
       value={selectedItem ? selectedItem.name : ""}

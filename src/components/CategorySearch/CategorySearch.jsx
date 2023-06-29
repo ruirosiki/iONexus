@@ -1,4 +1,4 @@
-// Provide a drop down menu for category searching
+// Drop down menu for category searching
 
 export default function CategorySearch({
   inventory,
