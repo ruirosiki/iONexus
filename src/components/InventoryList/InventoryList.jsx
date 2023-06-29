@@ -10,41 +10,35 @@ export default function InventoryList({
   handleCategoryChange,
   categories,
 }) {
-  const [filteredInventory, setFilteredInventory] = useState([]);
-  // //Option 1
-  //   useEffect(() => {
-  //     if (selectedCategory) {
-  //       setFilteredInventory(
-  //         inventory.filter((item) => item.category === selectedCategory)
-  //       );
-  //     } else {
-  //       setFilteredInventory(inventory);
-  //     }
-  //   }, [selectedCategory, inventory]);
+  // const [filteredInventory, setFilteredInventory] = useState([]);
 
-  //   const inventoryItems = filteredInventory.map((item) => (
-  //     <Item key={item._id} inventory={item} />
-  //   ));
+  // useEffect(() => {
+  //   setFilteredInventory(
+  //     selectedCategory
+  //       ? inventory.filter((item) => item.category === selectedCategory)
+  //       : inventory
+  //   );
+  // }, [selectedCategory, inventory]);
 
-  // const filteredInventory = selectedCategory
-  //   ? inventory.filter((item) => item.category === selectedCategory)
-  //   : inventory;
+  // const inventoryItems = filteredInventory.map((item) => (
+  //   <Item key={item._id} inventory={item} />
+  // ));
 
-  useEffect(() => {
-    setFilteredInventory(
-      selectedCategory
-        ? inventory.filter((item) => item.category === selectedCategory)
-        : inventory
+  // useEffect(() => {
+  //   setFilteredInventory(inventory);
+  // }, []);
+
+  let filteredInventory = inventory;
+
+  if (selectedCategory) {
+    filteredInventory = inventory.filter(
+      (item) => item.category === selectedCategory
     );
-  }, [selectedCategory, inventory]);
+  }
 
   const inventoryItems = filteredInventory.map((item) => (
     <Item key={item._id} inventory={item} />
   ));
-
-  useEffect(() => {
-    setFilteredInventory(inventory);
-  }, []);
 
   return (
     <div>

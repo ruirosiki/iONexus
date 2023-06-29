@@ -54,12 +54,6 @@ export default function NewItemForm({ categories, selectedCategory }) {
             </option>
           ))}
         </select>
-        {/* <input
-          type="text"
-          className="input"
-          value={itemForm.category}
-          onChange={(e) => updateForm({ category: e.target.value })}
-        /> */}
       </label>
       <br />
       <label className="label">

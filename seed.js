@@ -259,10 +259,10 @@ const Customer = require("./models/customer");
     },
     {
       user: "649997fefba4a016758a5bbe",
-      name: "Senia",
-      contactPerson: "Koa",
-      email: "koa@senia.com",
-      phoneNumber: 8085551234,
+      name: "Altura",
+      contactPerson: "Liza",
+      email: "liza@altura.com",
+      phoneNumber: 3605981574,
     },
     {
       user: "649997fefba4a016758a5bbe",
