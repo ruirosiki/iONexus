@@ -25,7 +25,7 @@ Welcome to iONexus. A web application for inventory and order management. This w
 
 If a user does not have an account, they will be able to create one, otherwise the user will login to the app. Once logged in the user will be able to navigate between the different pages by using the nav bar on the left. The logged in user will be able to create new items, add new customers, edit the customer data, remove a customer, see a list of all the customers, view current inventory and filter the inventory for specific category items.
 
-[Click to Start Using iONexus](https://onederland.onrender.com)
+[Click to Start Using iONexus](https://ionexus.onrender.com)
 
 ## Future Features
 
