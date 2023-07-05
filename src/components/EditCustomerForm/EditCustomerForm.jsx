@@ -37,7 +37,7 @@ export default function EditCustomerForm({
   // }
 
   return (
-    <form>
+    <form className="edit-customer">
       <input
         type="text"
         className="input"

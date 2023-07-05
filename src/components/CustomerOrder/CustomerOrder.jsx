@@ -10,7 +10,7 @@ import React from "react";
 
 export default function CustomerOrder() {
   return (
-    <div>CustomerOrder</div>
+    <div>Customer Order</div>
     //<CustomerName />
     //<OrderDate />
     //<LineItem />
