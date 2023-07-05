@@ -1,5 +1,6 @@
 import React from "react";
 import NewItemForm from "../../components/NewItemForm/NewItemForm";
+import "./NewInventoryItemPage.css";
 
 export default function NewInventoryItemPage({
   categories,
@@ -7,7 +8,7 @@ export default function NewInventoryItemPage({
   handleCategoryChange,
 }) {
   return (
-    <div>
+    <div className="new-inventory-item">
       <h2>Add New Inventory Item</h2>
       <NewItemForm
         categories={categories}

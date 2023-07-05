@@ -11,7 +11,7 @@ import AddLineItem from "../../components/AddLineItem/AddLineItem";
 export default function NewOrderPage({ customers, inventory }) {
   return (
     <div>
-      <h1>New Order Page</h1>
+      <h1>Place a New Customer Order</h1>
       <CustomerSearch customers={customers} />
       <AddLineItem inventory={inventory} />
       <CustomerOrder />

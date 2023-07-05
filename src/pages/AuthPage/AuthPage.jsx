@@ -13,7 +13,7 @@ export default function AuthPage({ setUser }) {
   }
   return (
     <div>
-      <h1>Auth Page</h1>
+      <h1>Welcome to iONexus</h1>
       {userPref === "signup" ? (
         <SignUpForm setUser={setUser} />
       ) : (
