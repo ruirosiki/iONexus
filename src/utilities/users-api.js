@@ -5,8 +5,8 @@ import sendRequest from "./send-request";
 //built a react client that consumed XXX API
 // need a base path to use to refer requests to location of routes
 // This is the base path of the Express route we'll define
-const BASE_URL = "/api/users";
-// const BASE_URL = "https://ionexus-api.onrender.com/api/users";
+// const BASE_URL = "/api/users";
+const BASE_URL = "https://ionexus-api.onrender.com/api/users";
 
 export function signUp(userData) {
   return sendRequest(BASE_URL, "POST", userData);

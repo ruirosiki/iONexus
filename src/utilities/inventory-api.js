@@ -1,6 +1,6 @@
 import sendRequest from "./send-request";
-const BASE_URL = "/api/inventory";
-// const BASE_URL = "https://ionexus-api.onrender.com/api/inventory";
+// const BASE_URL = "/api/inventory";
+const BASE_URL = "https://ionexus-api.onrender.com/api/inventory";
 
 // Make a DB call to get all inventory items
 export async function getAll() {
