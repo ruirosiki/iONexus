@@ -31,6 +31,9 @@ export default function CustomerItem({ customer, setCustomers }) {
     await customersApi.deleteCustomer(customerId);
     const customers = await customersApi.getAll();
     setCustomers(customers);
+    // setCustomers((prevCustomers) =>
+    //   prevCustomers.filter((c) => c._id !== customerId)
+    // );
   }
 
   async function handleUpdateCustomer(e) {
