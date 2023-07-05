@@ -55,7 +55,7 @@ export default function LineItemForm({ inventory }) {
             className="input"
             value={quantity}
             onChange={handleQuantityChange}
-            style={{ width: 75 }}
+            style={{ width: 85 }}
           />
         </label>
         &nbsp;&nbsp;
@@ -65,7 +65,7 @@ export default function LineItemForm({ inventory }) {
             type="string"
             className="input"
             value={selectedItem.unit}
-            style={{ width: 75 }}
+            style={{ width: 85 }}
             readOnly
           />
         </label>
@@ -76,7 +76,7 @@ export default function LineItemForm({ inventory }) {
             type="number"
             className="input"
             value={selectedItem?.cost?.toFixed(2) || ""}
-            style={{ width: 75 }}
+            style={{ width: 85 }}
             readOnly
           />
         </label>
@@ -88,7 +88,7 @@ export default function LineItemForm({ inventory }) {
             className="add-item-label"
             value={price}
             onChange={handlePriceChange}
-            style={{ width: 75 }}
+            style={{ width: 85 }}
           />
         </label>
         &nbsp;&nbsp;
