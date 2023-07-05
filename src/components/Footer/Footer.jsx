@@ -1,5 +1,5 @@
-import React from "react";
+import "./Footer.css";
 
 export default function Footer() {
-  return <div>&copy; 2023 iONexus</div>;
+  return <div className="footer">&copy; 2023 iONexus</div>;
 }

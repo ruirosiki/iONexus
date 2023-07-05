@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Item from "../InventoryItem/InventoryItem";
 import "./InventoryList.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import CategorySearch from "../../components/CategorySearch/CategorySearch";
 import NewItemButton from "../NewItemButton/NewItemButton";
 export default function InventoryList({
@@ -10,41 +10,16 @@ export default function InventoryList({
   handleCategoryChange,
   categories,
 }) {
-  const [filteredInventory, setFilteredInventory] = useState([]);
-  // //Option 1
-  //   useEffect(() => {
-  //     if (selectedCategory) {
-  //       setFilteredInventory(
-  //         inventory.filter((item) => item.category === selectedCategory)
-  //       );
-  //     } else {
-  //       setFilteredInventory(inventory);
-  //     }
-  //   }, [selectedCategory, inventory]);
-
-  //   const inventoryItems = filteredInventory.map((item) => (
-  //     <Item key={item._id} inventory={item} />
-  //   ));
-
-  // const filteredInventory = selectedCategory
-  //   ? inventory.filter((item) => item.category === selectedCategory)
-  //   : inventory;
-
-  useEffect(() => {
-    setFilteredInventory(
-      selectedCategory
-        ? inventory.filter((item) => item.category === selectedCategory)
-        : inventory
+  let filteredInventory = inventory;
+  if (selectedCategory) {
+    filteredInventory = inventory.filter(
+      (item) => item.category === selectedCategory
     );
-  }, [selectedCategory, inventory]);
+  }
 
   const inventoryItems = filteredInventory.map((item) => (
     <Item key={item._id} inventory={item} />
   ));
-
-  useEffect(() => {
-    setFilteredInventory(inventory);
-  }, []);
 
   return (
     <div>

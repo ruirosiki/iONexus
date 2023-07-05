@@ -71,7 +71,7 @@ export default function NewCustomerForm({ user }) {
         />
       </label>
       <br />
-      <button className="button" type="submit">
+      <button className="button add-customer-btn" type="submit">
         Add Customer
       </button>
     </form>

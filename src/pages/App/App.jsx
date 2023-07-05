@@ -16,12 +16,21 @@ import GetInventory from "../../components/GetInventory/GetInventory";
 import { getUser } from "../../utilities/users-service";
 
 export default function App() {
-  // user defined in app so we can pass to any component through the whole app
+  // *********** STATES **********
   const [user, setUser] = useState(getUser());
-  // define customer state
   const [customers, setCustomers] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [inventory, setInventory] = useState([]);
+
+  // *********** FUNCTIONS **********
+  useEffect(function () {
+    async function getInventory() {
+      const inventoryData = await inventoryApi.getAll();
+      setInventory(inventoryData);
+    }
+    getInventory();
+  }, []);
 
   function handleCategoryChange(e) {
     const categoryId = e.target.value;
@@ -37,7 +46,6 @@ export default function App() {
     async function getCategories() {
       const categoriesData = await inventoryApi.getAllCategories();
       setCategories(categoriesData);
-      console.log(categories);
     }
     getCategories();
   }, []);
@@ -54,7 +62,9 @@ export default function App() {
             />
             <Route
               path="/orders/new"
-              element={<NewOrderPage customers={customers} />}
+              element={
+                <NewOrderPage customers={customers} inventory={inventory} />
+              }
             />
             {/* <Route path="/inventory" element={<GetInventory />} /> */}
             <Route
@@ -64,6 +74,7 @@ export default function App() {
                   categories={categories}
                   selectedCategory={selectedCategory}
                   handleCategoryChange={handleCategoryChange}
+                  inventory={inventory}
                 />
               }
             />
