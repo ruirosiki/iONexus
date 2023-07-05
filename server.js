@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
 const logger = require("morgan");
+const cors = require("cors");
 require("dotenv").config();
 // connect to the database
 require("./config/database");
@@ -16,6 +17,12 @@ app.use(express.json());
 // app.use(favicon(path.join(__dirname, "build", "favicon.ico")));
 app.use(express.static(path.join(__dirname, "build")));
 
+//cors is for the deployed app
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://ionexus.onrender.com"],
+  })
+);
 // Middleware to verify token and assign user object of payload to req.user
 app.use(require("./config/checkToken"));
 
