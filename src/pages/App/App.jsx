@@ -75,6 +75,7 @@ export default function App() {
                   selectedCategory={selectedCategory}
                   handleCategoryChange={handleCategoryChange}
                   inventory={inventory}
+                  setInventory={setInventory}
                 />
               }
             />
@@ -85,6 +86,7 @@ export default function App() {
                   categories={categories}
                   selectedCategory={selectedCategory}
                   handleCategoryChange={handleCategoryChange}
+                  setInventory={setInventory}
                 />
               }
             />

@@ -3,7 +3,11 @@ import { useNavigate } from "react-router-dom";
 import * as inventoryApi from "../../utilities/inventory-api";
 import CategorySearch from "../CategorySearch/CategorySearch";
 
-export default function NewItemForm({ categories, selectedCategory }) {
+export default function NewItemForm({
+  categories,
+  selectedCategory,
+  setInventory,
+}) {
   const [itemForm, setItemForm] = useState({
     name: "",
     category: "",
@@ -27,6 +31,11 @@ export default function NewItemForm({ categories, selectedCategory }) {
     const categoryId = category ? category._id : null;
     const newItem = { ...itemForm, category: categoryId };
     await inventoryApi.addNewItem(newItem);
+
+    //Update inventory before navigating
+    const updatedInventory = await inventoryApi.getInventory();
+    setInventory(updatedInventory);
+
     // Reset form fields
     setItemForm({
       name: "",

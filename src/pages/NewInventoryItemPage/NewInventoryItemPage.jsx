@@ -6,6 +6,7 @@ export default function NewInventoryItemPage({
   categories,
   selectedCategory,
   handleCategoryChange,
+  setInventory,
 }) {
   return (
     <div className="new-inventory-item">
@@ -14,6 +15,7 @@ export default function NewInventoryItemPage({
         categories={categories}
         selectedCategory={selectedCategory}
         handleCategoryChange={handleCategoryChange}
+        setInventory={setInventory}
       />
     </div>
   );

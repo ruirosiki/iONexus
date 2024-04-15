@@ -1,6 +1,14 @@
 .nav-bar {
-    border: solid black;
+    /* border: solid black; */
     display: flex;
     flex-direction: column;
     width: 200px;
+}
+
+.nav-button {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0;
 }

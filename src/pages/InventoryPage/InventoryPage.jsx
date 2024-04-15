@@ -1,5 +1,6 @@
 import InventoryList from "../../components/InventoryList/InventoryList";
 import ExcelExport from "../../components/ExcelExport/ExcelExport";
+import { useEffect } from "react";
 
 export default function InventoryPage({
   categories,
@@ -7,6 +8,7 @@ export default function InventoryPage({
   handleCategoryChange,
   inventory,
 }) {
+  useEffect(() => {}, [inventory]);
   return (
     <div>
       <h1>Current Inventory</h1>
